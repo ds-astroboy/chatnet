@@ -1,0 +1,8 @@
+- Wallet connection
+make users available sign in using aptos wallet
+- NFT Gating
+when users create their own rooms, have to be available to allow aptos NFT gating, which means only users with those nfts can enter the room
+- Token Gating
+when users create their own rooms, have to be available to allow aptos token gating, which means only users with selected amount of aptos tokens can enter the room
+- Billing
+users can give aptos tokens to others in their chatrooms
