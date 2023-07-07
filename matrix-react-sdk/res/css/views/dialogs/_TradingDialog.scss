@@ -1,0 +1,483 @@
+.mx_TradingDialog {
+    width: 800px;
+    min-width: 800px;
+    .mx_TradingDialog_body {
+        margin-top: 50px;
+        display: flex;
+        align-items: stretch;
+        .mx_TradingDialog_container {
+            width: 50%;
+            .mx_TradingDialog_items_wrap {
+                justify-content: center;
+                .mx_TradingDialog_item_box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            &.user {
+                // border-right: 1px solid $border-grey-color;
+                padding-right: 50px;
+                .mx_TradingDialog_items_wrap {
+                    .mx_TradingDialog_item_box {
+                        .mx_TradingDialog_item_add {
+                            width: 20px;
+                            height: 20px;
+                            position: relative;
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                top: 0;
+                                left: 0;
+                                mask-image: url('$(res)/img/trade-box-add.png');
+                                background-color: $border-grey-color;
+                                mask-size: contain
+                            }
+                        }
+                        
+                        &:hover {
+                            .mx_TradingDialog_item_add {
+                                &::before {
+                                    background-color: $font-grey-color;
+                                }
+                            }
+                            border-color: $font-grey-color;
+                            &.refresh {
+                                div {
+                                    &::before {
+                                        background-color: rgb(111, 173, 248);
+                                    }
+                                }
+                            }
+                            &.locked {
+                                border-color: $border-grey-color;
+                            }
+                        }
+                    }
+                }
+                .mx_TradingDialog_items_header {
+                    margin-left: 10px;
+                }
+                .mx_TradingDialog_Wallet_Approve_Status {
+                    justify-content: right;
+                }
+            }
+            &.tradingUser {
+                padding-left: 50px;
+                .mx_TradingDialog_items_header {
+                    margin-left: 40px;
+                }
+                .mx_TradingDialog_Wallet_Approve_Status {
+                    justify-content: left;
+                }
+            }
+            .mx_TradingDialog_items_header {
+                .mx_TradingDialog_user_info {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .mx_TradingDialog_User_avatar {
+                        width: 50px;
+                        height: 50px;
+                        img {
+                            border-radius: 50%;
+                            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+                        }
+                    }
+                    .mx_TradingDialog_User_Name {
+                        margin-left: 10px;
+                        width: 100px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: $font-dark-color;
+                        font-size: $font-16px;
+                        font-family: FontBold;
+                    }
+                    .mx_TradingDialog_User_itemIcon {
+                        margin-left: 20px;
+                        position: relative;
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+                        img {
+                            width: 60%;
+                            height: 60%;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+                .mx_TradingDialog_header_label {
+                    font-size: $font-14px;
+                    color: $font-grey-white-color;
+                    margin: 15px 0 0 10px;
+                }
+            }
+            
+            .mx_TradingDialog_items_wrap {
+                margin-top: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                cursor: pointer;
+                .mx_TradingDialog_item_box {
+                    border-radius: 15px;
+                    border: 1px solid $border-grey-color;
+                    width: 75px;
+                    height: 75px;
+                    margin: 10px;
+                    position: relative;
+                    &.refresh {
+                        border: none;
+                        div {
+                            width: 55px;
+                            height: 55px;
+                            border-radius: 50%;
+                            &::before {
+                                content: "";
+                                width: 50%;
+                                height: 50%;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                mask-image: url('$(res)/img/trade-refresh.png');
+                                mask-position: center;
+                                mask-size: cover;
+                                mask-repeat: no-repeat;
+                                background-color: $border-grey-color;
+                            }
+                        }
+                    }
+                    &.locked {
+                        cursor: not-allowed;
+                        div {
+                            width: 50px;
+                            height: 50px;
+                            &::before {
+                                content: "";
+                                width: 30%;
+                                height: 30%;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                mask-image: url('$(res)/img/trade-box-unavailable.png');
+                                mask-position: center;
+                                mask-size: cover;
+                                mask-repeat: no-repeat;
+                                background-color: $border-grey-color;
+                            }
+                        }
+                    }
+                    &.fill {
+                        background-color: $border-grey-color;
+                    }
+                    &.hidden {
+                        visibility: hidden;
+                    }
+                    &.item {
+                        width: 71px;
+                        height: 71px;
+                        border: 3px solid rgb(68, 139, 40);
+                    }
+                    &.add {
+                        &:hover {
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 20px;
+                                height: 20px;
+                                top: 22.5;
+                                left: 22.5;
+                                mask-image: url('$(res)/img/trade-box-add.png');
+                                background-color: $font-grey-color;
+                                mask-size: contain
+                            }
+                            border-color: $font-grey-color;
+                        }
+                    }
+                    &.update {
+                        &:hover {
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                background-color: rgba(0, 0, 0, 0.74);
+                                border-radius: 12px;
+                            }
+                            &::after {
+                                content: '';
+                                position: absolute;
+                                width: 30px;
+                                height: 30px;
+                                top: 17.5;
+                                left: 17.5;
+                                mask-image: url('$(res)/img/delete.svg');
+                                background-color: white;
+                                mask-size: contain
+                            }
+                            border-color: $font-grey-color;
+                        }
+                    }
+                    &.nft-item {
+                        border-radius: 15px; /*1*/
+                        border: 3px solid transparent; /*2*/
+                        background: linear-gradient(90deg, #9244d9, #05dba3) border-box; /*3*/
+                        -webkit-mask-composite: destination-out; /*5'*/
+                        mask-composite: exclude; /*5*/
+                    }
+                    div {
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            border-radius: 12px;
+                            &.currency {
+                                width: 50%;
+                                position: absolute;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                            }
+                            &.nft {
+                                width: 100%;
+                            }
+                        }
+                        .badge {
+                            position: absolute;
+                            bottom: -5px;
+                            right: -5px;
+                            width: 40%;
+                            height: 40%;
+                            border-radius: 50%;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            .mx_TradingDialog_option_group {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 50px;
+                .mx_TradingDialog_currency_dropdown {
+                    position: relative;
+                    min-width: 150px;
+                    &_label {
+                        position: absolute;
+                        top: -10px;
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        white-space: nowrap;
+                        z-index: 1000;
+                    }
+                    .mx_Dropdown_input {
+                        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+                        border-radius: 15px;
+                        border: none;
+                        height: 45px;
+                        .mx_TradingDialog_currencyOption {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+                .mx_TradingDialog_button_group {
+                    display: flex;
+                    align-items: center;
+                    &.tradingUser {
+                        justify-content: left;
+                        .mx_TradingDialog_button {
+                            &.yes {
+                                &::before {
+                                    background-image: none;
+                                    mask-image: url('$(res)/img/approve-trade.png');
+                                    background-color: white;
+                                }
+                            }
+                            &.selected {
+                                &.no {
+                                    border-color: $warning-color;
+                                    background-color: $warning-color;
+                                    &::before {
+                                        background-color: white;
+                                    }
+                                }
+                                &.yes {
+                                    background-color: rgb(68, 139, 40);
+                                    border-color: rgb(68, 139, 40);
+                                    &::before {
+                                        background-color: white;
+                                    }
+                                }
+                            }
+                            &.ghosted {
+                                border-color: $border-grey-color !important;
+                                background-color: $border-grey-color !important;
+                                &::before {
+                                    background-color: white !important;
+                                }
+                            }
+                        }
+                    }
+                    .mx_TradingDialog_button {
+                        border-radius: 50%;
+                        border: 1px solid $border-grey-color;
+                        transition: all 0.5s;
+                        background-color: transparent;
+                        padding: 10px;
+                        width: 20px;
+                        height: 20px;
+                        position: relative;
+                        &.yes {
+                            &::before {
+                                background-image: url('$(res)/img/approve-trade.png');
+                            }
+                        }
+                        &.no {
+                            &::before {
+                                mask-image: url('$(res)/img/close-dark.png');
+                                background-color: $font-dark-color;
+                            }
+                        }
+                        &:hover {
+                            background-color: rgb(68, 139, 40);
+                            border-color: rgb(68, 139, 40);
+                            transition: all 0.5s;
+                            &.no {
+                                &::before {
+                                    background-color: white;
+                                }
+                            }
+                            &.yes {
+                                &::before {
+                                    background-image: none;
+                                    mask-image: url('$(res)/img/approve-trade.png');
+                                    background-color: white;
+                                }
+                            }
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            height: 20px;
+                            width: 20px;
+                            top: 10px;
+                            left: 10px;
+                            background-position: center;
+                            background-size: cover;
+                            mask-position: center;
+                            mask-size: cover;
+                        }
+                        &.selected {                        
+                            &.no {
+                                border-color: $warning-color;
+                                background-color: $warning-color;
+                                &::before {
+                                    background-color: white;
+                                }
+                            }
+                            &.yes {
+                                background-color: rgb(68, 139, 40);
+                                border-color: rgb(68, 139, 40);
+                                &::before {
+                                    background-image: none;
+                                    mask-image: url('$(res)/img/approve-trade.png');
+                                    background-color: white;
+                                }
+                            }
+                        }
+                        &.hide {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .mx_TradingDialog_Wallet_Approve_Status {
+                margin-top: 20px;
+                display: flex;
+                .status_dot {
+                    width: 5px;
+                    height: 5px;
+                    border-radius: 50%;
+                    &.approved {
+                        background-color: $green-color;
+                    }
+                    &.disabled {
+                        background-color: $warning-color;
+                    }
+                }
+            }
+        }
+    }
+    .mx_TradingDialog_eventPanel {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &_title {
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_wrap {
+            margin-top: 10px;
+            max-height: 100px;
+            overflow-y: overlay;
+        }
+        &_event {
+            font-size: $font-14px;
+            color: $font-dark-white-color;
+            margin-bottom: 10px;
+        }
+    }
+    .mx_TradingDialog_result_button_wrap {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+        .mx_TradingDialog_result_button {
+            color: $font-grey-color;
+            width: 30%;
+            background-color: $border-grey-color;
+            cursor: not-allowed;
+            &.active {
+                color: white;
+                cursor: pointer;
+                background-color: rgb(68, 139, 40);
+                transition: all 0.5s;
+                &:hover {
+                    border-color: $font-purple-color;
+                    background-color: $font-purple-color;
+                }
+            }
+        }
+    }
+    .mx_TradingDialog_footer {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        .mx_TradingDialog_footer_icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-image: url('$(res)/img/warning-sign.png');
+        }
+        .mx_TradingDialog_footer_content {
+            color: $font-grey-color;
+            font-size: $font-10px;
+            margin-left: 15px;
+        }
+    }
+}

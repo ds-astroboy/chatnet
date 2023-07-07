@@ -1,0 +1,202 @@
+.mx_VoteCard {
+    padding: 0 30px;
+    &_info {
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-grey-color;
+    }
+    &_title {
+        text-align: left;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: FontBold;
+        font-size: $font-18px;
+        color: $font-dark-white-color;
+    }
+    &_member {
+        text-align: left;
+        color: $font-dark-white-color;
+        margin-top: 10px;
+        font-family: FontRegular;
+        font-size: $font-13px;
+    }
+    &_detail {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    &_category {
+        font-family: FontRegular;
+        font-size: $font-13px;
+        color: $font-dark-white-color;
+        padding: 2px 5px;
+        border: 1px solid $border-grey-color;
+        border-radius: 9999px;
+        background-color: $border-grey-color;
+    }
+    &_condition {
+        padding: 2px 5px;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        display: flex;
+        align-items: center;
+        &_logo {
+            width: 18px;
+            height: 18px;
+            background-image: url("$(res)/img/solana.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 5px;
+        }
+        &_content {
+            font-family: FontBold;
+            font-size: $font-13px;
+            color: $font-dark-white-color;
+        }
+    }
+    &_buttons {
+        display: flex;
+        align-items: center;
+    }
+    &_joinButton {
+        width: 50%;
+        padding: 8px 0;
+        font-size: $font-12px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        border: 1px solid $border-grey-color;
+        border-radius: 9999px;
+        cursor: pointer;
+        &.joined {
+            background-color: $font-purple-color;
+            border-color: $font-purple-color;
+            color: white;
+        }
+    }    
+    &_tools {
+        display: flex;
+        align-items: center;
+    }
+    &_button {
+        width: 35px;
+        height: 35px;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        position: relative;
+        margin-left: 10px;
+        &::before {
+            content: "";
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            mask-position: center;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            background-color: $font-dark-color;
+        }
+        &.visit {
+            &::before {
+                mask-image: url("$(res)/img/forward.png");
+            }
+        }
+        &.notification {
+            &::before {
+                mask-image: url("$(res)/img/no-notification.png");
+            }
+        }
+        &.help {
+            &::before {
+                mask-image: url("$(res)/img/help.png");
+            }
+        }
+        &:hover {
+            transition: all 0.5s;
+            background-color: $font-purple-color;
+            &::before {
+                transition: all 0.5s;
+                background-color: white;
+            }
+        }
+    }
+    &_voteSection {
+        padding: 20px 0;
+    }
+    &_totalVoteCount {
+        text-align: left;
+        color: $font-dark-white-color;
+        font-family: FontRegular;
+        font-size: $font-13px;
+    }
+    &_voteButtonGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 0;
+    }
+    &_voteButton {
+        margin: 10px 0;
+        height: 45px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-14px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        border: 1px solid $border-grey-color;
+        border-radius: 9999px;
+        overflow: hidden;
+        transition: all 0.5s;
+        position: relative;
+        &_count {
+            position: relative;
+            z-index: 1;
+            display: none;
+        }
+        &_label {
+            position: relative;
+            z-index: 1;
+        }
+        .progressBar {
+            position: absolute;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+        }
+        &:hover {
+            justify-content: space-around;
+            .mx_VoteCard_voteButton_count {
+                display: inline;
+            }
+        }
+        &.yes {
+            &:hover {
+                .progressBar {
+                    transition: all 0.5s;
+                    background-color: $green-color;
+                }
+            }
+        }
+        &.no {
+            &:hover {
+                .progressBar {
+                    transition: all 0.5s;
+                    background-color: $warning-color;
+                }
+            }
+        }
+    }
+    &_timeStatus {
+        text-align: left;
+        font-size: $font-12px;
+        color: $font-dark-white-color;
+        font-family: FontRegular;
+    }
+}

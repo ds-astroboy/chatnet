@@ -1,0 +1,71 @@
+.mx_Gallery {
+    width: 90vw;
+    max-width: 1000px;
+    height: 80vh;
+    min-height: 600px;
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_button {
+        display: flex;
+        align-items: center;
+        &_icon {
+            width: 18px;
+            height: 18px;
+        }
+        &_content {
+            margin-left: 5px;
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-grey-white-color;
+        }
+    }
+    &_dropdown {
+        width: 30%;
+        &_option {
+            font-size: $font-13px;
+            font-family: OpensanRegular;
+            color: $font-dark-white-color;
+            line-height: 1.5;
+        }
+    }
+    &_body {
+        margin-top: 50px;
+    }
+    &_nftWrap {
+        border-radius: 10px;
+        border: 1px solid $border-grey-color;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 20px;
+    }
+    &_nft {
+        height: 400px;
+        width: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-sizing: border-box !important;
+        padding: 5px;
+        background-color: $border-grey-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_img {
+            box-sizing: border-box !important;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+        }
+    }
+    &_empty {
+        box-sizing: border-box !important;
+        background-color: $border-grey-color;
+        border-radius: 10px;
+        &_icon {
+            width: 300px;
+        }
+    }
+}

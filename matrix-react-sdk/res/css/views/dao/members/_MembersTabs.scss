@@ -1,0 +1,57 @@
+.mx_MembersTabs {
+    &_button {
+        box-sizing: border-box !important;
+        padding: 20px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        &.active {
+            border-left: 3px solid $font-dark-white-color;
+            background-color: $border-grey-color;
+            .mx_MembersTabs_address {
+                color: $font-dark-white-color;
+            }
+
+            .mx_MembersTabs_voteTokenInfo {
+                color: $font-dark-white-color;
+            }
+            .mx_MembersTabs_member_avatar {
+                background-color: white;
+            }
+        }
+    }
+    &_member {
+        display: flex;
+        align-items: center;
+        &_avatar {
+            padding: 3px;
+            border-radius: 50%;
+            background-color: $border-grey-color;
+            width: 20px;
+            height: 20px;
+            color: $font-grey-white-color;
+        }
+        &_info {
+            margin-left: 10px;
+        }
+        &_address {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_voteTokenInfo {
+            margin-top: 10px;
+            font-size: $font-12px;
+            color: $font-grey-white-color;
+            font-family: FontRegular;
+        }
+        &_otherVoteTokenInfo {
+            margin-top: 5px;
+            font-size: $font-12px;
+            color: $font-grey-white-color;
+            font-family: FontRegular;
+            span {
+                margin-right: 5px;
+            }
+        }
+    }
+}

@@ -1,0 +1,130 @@
+.mx_CongratulationDialog {
+    max-width: 550px;
+    .mx_Dialog_header {
+        .mx_Dialog_title {
+            text-align: center;
+        }
+    }
+    &_avatar {
+        width: 200px;
+        margin: 10px auto;
+        &_lottie {
+            width: 100%;
+        }
+    }
+    &_statement1 {
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        font-size: $font-20px;
+        text-align: center;
+    }
+    &_statement2 {
+        margin-top: 10px;
+        font-family: FontRegular;
+        color: $font-dark-white-color;
+        font-size: $font-15px;
+        text-align: center;
+    }
+    &_award {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 20px;
+        &_logo {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url("$(res)/img/cafeteria-point.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        &_amount {
+            margin-left: 15px;
+            font-size: $font-40px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+    }
+    &_help {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        &_title {
+            border-radius: 8px;
+            box-shadow: 4px 4px 12px 0 $menu-box-shadow-color;
+            background-color: $inverted-bg-color;
+            color: $accent-fg-color;
+            padding: 8px;
+            border: 0;
+            font-family: FontRegular;
+            line-height: $font-14px;
+            font-size: $font-12px;
+            pointer-events: none;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -120%);
+            white-space: nowrap;
+            display: none;
+        }
+        &_icon {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            &::before {
+                content: '';                  
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: url("$(res)/img/info1.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        &_content {
+            margin-left: 5px;
+            font-family: FontBold;
+            color: $green-color;
+            font-size: $font-14px;
+            &:hover {
+                color: $font-purple-color;
+            }
+        }
+        &:hover {
+            &_title {
+                display: inline;
+            }
+        }
+    }
+    &_claimButton {
+        margin: 50px 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .mx_AccessibleButton {
+            width: fit-content;
+            padding: 0 20px;
+        }
+    }
+    &_coinLottie {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99999999999;
+    }
+}

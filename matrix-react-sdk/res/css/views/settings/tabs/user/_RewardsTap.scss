@@ -1,0 +1,18 @@
+.mx_RewardsTap {
+    &_item {
+        &_checkbox {
+            width: calc(100% - 55px);
+        }
+        &_credit {
+            &_logo {
+                width: 20px;
+                height: 20px;
+                background-image: url("$(res)/img/cafeteria-point.png");
+            }
+            &_amount {
+                margin-left: 5px;
+                font-size: 13px;
+            }
+        }
+    }
+}

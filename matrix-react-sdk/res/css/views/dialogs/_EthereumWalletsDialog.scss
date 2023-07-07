@@ -1,0 +1,50 @@
+.mx_EthereumWalletsModal {
+    z-index: 10000 !important;
+    .modal-dialog {
+        max-width: 450px;
+        width: 30%;
+    }
+    .modal-content {
+        border-radius: 20px !important;
+        padding: 20px;
+        .modal-header {
+            border-bottom: none;
+            .modal-title {
+                width: 100%;
+                font-size: $font-24px !important;
+                font-family: FontBold !important;
+                color: $font-dark-white-color;
+                text-transform: capitalize;
+                display: flex;
+                justify-content: center !important;
+            }
+        }
+        .mx_EthereumWalletsModal_button {
+            background-color: #4630a0 !important;
+            margin: 10px 0px;
+            border-radius: 9999px;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &_logo {
+                width: 20px;
+                height: 20px;
+                &.coinbase {
+                    background-image: url("$(res)/img/wallets/coinbase.png");
+                }
+                &.wallet-connect {
+                    background-image: url("$(res)/img/wallets/wallet-connect.png");
+                }
+                &.metamask {
+                    background-image: url("$(res)/img/wallets/metamask.svg");
+                }
+            }
+            &_label {
+                font-size: $font-15px;
+                font-family: FontBold !important;
+                color: white;
+            }
+        }
+    }
+}

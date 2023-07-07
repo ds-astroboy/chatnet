@@ -1,0 +1,36 @@
+.mx_InstructionPanel {
+    padding: 50px;
+    &_button {
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 45px;
+        width: 100%;
+        border: 1px solid $border-grey-color;
+        border-radius: 9999px;
+        &_content {
+            font-family: FontBold;
+            color: $font-dark-white-color;
+            font-size: $font-16px;
+        }
+        &_icon {
+            width: 20px;
+            height: 20px;
+            &.bottom {
+                transform: rotate(180deg);
+            }
+        }
+        &.opened {
+            border-color: $font-purple-color;
+        }
+        &:hover {
+            border-color: $font-purple-color;
+        }
+    }
+    &_body {
+        margin-top: 10px;
+        border: 1px solid $border-grey-color;
+        border-radius: 10px;
+    }
+}

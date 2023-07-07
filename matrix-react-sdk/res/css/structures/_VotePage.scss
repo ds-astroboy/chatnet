@@ -1,0 +1,662 @@
+/*
+Copyright 2016 OpenMarket Ltd
+Copyright 2017 Vector Creations Ltd
+Copyright 2019 New Vector Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.mx_VotePage {
+    // max-width: 960px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mx_VotePage_default {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    .mx_VotePage_wrapper {
+        .mx_VotePage_First_background {
+            width: 100%;
+            padding-top: 10%;
+            padding-bottom: 8%;
+            display: flex;
+            justify-content: center;   
+            background: url('$(res)/img/vote-bg.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            border-left: 1px solid $border-grey-color;      
+            .mx_VotePage_introSection {
+                max-width: 460px;
+                width: 100%;
+                z-index: 100;
+                .mx_VotePage_introSection_title {
+                    font-size: 29px;
+                    line-height: 38px;
+                    color: white;
+                    font-family: FontBold;
+                }
+                .mx_VotePage_introSection_button_group {
+                    margin-top: 60px;
+                    display: flex;
+                    justify-content: center;
+                    .mx_AccessibleButton  {
+                        height: 45px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0px 15px;
+                        background-color: $green-color;
+                        border-radius: 9999px;
+                        border: 1px solid $green-color;
+                        color: white;
+                        margin: 10px 20px;
+                        width: 110px;
+                        font-family: FontRegular;
+                        font-size: $font-14px;
+                    } 
+                    .mx_VotePage_button_createGroup {
+                        &:hover {
+                            background-color: $font-purple-color;
+                            border-color: $font-purple-color;
+                            transition: all 0.5s;
+                        }
+                    }
+                    .mx_VotePage_button_learn {
+                        background-color: transparent;
+                        border: 1px solid $green-color;
+                        display: flex;
+                        justify-content: center;
+                        color: $green-color;
+                        align-items: center;
+                        .mx_VotePage_button_learn_img {
+                            width: 20px;
+                            height: 15px;
+                            margin-right: 10px;
+                            background-color: $green-color;
+                            mask-image: url("$(res)/img/camera.png");
+                            mask-size: contain;
+                            mask-repeat: no-repeat;
+                            mask-position: center;
+                            transition: all 0.5s;                            
+                        }
+                        &:hover {
+                            background-color: $font-purple-color;
+                            border-color: $font-purple-color;
+                            color: white;
+                            transition: all 0.5s;
+                            .mx_VotePage_button_learn_img {
+                                transition: all 0.5s;
+                                background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .mx_VotePage_Vote_category {
+            .mx_VotePage_Vote_categories_header {
+                border-bottom: 1px solid $border-grey-color;
+                border-top: 1px solid $border-grey-color;
+                overflow-x: scroll;
+                .mx_VotePage_Vote_categories_header_container {
+                    display: flex;
+                    margin: auto;
+                    width: fit-content;
+                    margin-top: 5px;
+                    .mx_VotePage_category {
+                        padding: 15px 10px;
+                        font-size: 14px;
+                        font-family: FontBold;
+                        color: $homepage-category-color;
+                        margin: 0px 20px;
+                        position: relative;
+                        white-space: nowrap;
+                        cursor: pointer;
+                        &.selected {
+                            border-bottom: 2px solid $homepage-selected-category-color;
+                            color: $homepage-selected-category-color;
+                        }
+                        img {
+                            width: 10px;
+                            margin-left: 3px;
+                            margin-bottom: 2px;
+                            height: 5px;
+                        }
+                        .mx_VotePage_more_categories {
+                            position: absolute;
+                            top: 104%;
+                            left: -2%;
+                            width: 150px;
+                            z-index: 10000;
+                            padding: 10px;
+                            border: 1px solid $border-grey-color;
+                            background-color: white;
+                            height: 130px;
+                            overflow-y: auto;
+                            .mx_VotePage_more_category {
+                                text-align: left;
+                                color: $font-dark-color;
+                                padding: 10px 10px;
+                                &:hover {
+                                    color: $font-purple-color;
+                                }
+                            }
+                            &.show {
+                                display: block;
+                            }
+                            &.hide {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+                .virtual_div {
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1000;
+                }
+            }
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px;
+            .mx_VotePage_Categories_Filterbar {
+                padding: 30px 12.5px;
+                padding: 30px 12.5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .mx_VotePage_filterbar_leftSection {
+                    display: flex;
+                    align-items: center;
+        
+                    .mx_VotePage_Filterbar_title {
+                        font-size: 20px;
+                        font-family: FontBold;
+                        color: $HomePage-filterbar-title-color;
+                    }
+                    .mx_VotePage_Filterbar_icon {
+                        margin-left: 10px;
+                        width: 30px;
+                        height: 30px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+                .mx_VotePage_filterbar_rightSection {
+                    .mx_VotePage_filter_select {
+                        width: 150px;
+                        font-size: 13px;
+                        text-align: left;
+                        font-family: FontRegular;
+                        position: relative;
+                        .mx_Dropdown_input {
+                            border-radius: 9999px;
+                            padding: 0px 10px;
+                            color: $homepage-filterbar-dropdown-color;
+                            height: 45px;
+                            .mx_Dropdown_menu {
+                                background-color: $homepage-filterbar-dropdown-menu-bg;
+                            }
+                        }
+                        .mx_VotePage_filter_select_title {
+                            font-size: 10px;
+                            font-family: FontRegular;
+                            position: absolute;
+                            top: -7px;
+                            left: 10px;
+                            padding: 0 3px;
+                            background-color: $filter-label-bg-color;
+                            z-index: 1;
+                            color: $intro-section-font-color;
+                        }
+                    }
+                }
+            }
+            .mx_VotePage_Public_groups {
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
+                flex-wrap: wrap;
+                .mx_VotePage_Public_room {
+                    width: calc(25% - 27px);
+                    border-radius: 10px;
+                    border: 1px solid $border-grey-color;
+                    overflow: hidden;
+                    margin: 0px 12.5px 50px 12.5px;
+                    transition: all 0.5s;
+                    .mx_VotePage_Public_room_avatar {
+                        margin-bottom: 30px;   
+                    }
+                    .mx_VotePage_Public_room_detail {
+                        padding: 20px;
+                        .mx_VotePage_Public_room_name {
+                            text-align: center;
+                            font-size: 16px;
+                            font-family: FontBold;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            color: $font-dark-white-color;
+                        }
+                        .mx_VotePage_Public_members_number {
+                            margin-top: 10px;
+                            font-family: FontRegular;
+                            font-size: $font-13px;
+                            color: $font-grey-white-color;
+                            text-align: center;
+                        }
+                        .mx_VotePage_Public_room_subinfo {
+                            display: flex;
+                            justify-content: left;
+                            align-items: center;
+                            margin-top: 20px;
+                            .mx_VotePage_Public_room_category {
+                                padding: 3px 10px;
+                                border-radius: 9999px;
+                                background-color: $font-purple-color;
+                                border: 1px solid $font-purple-color;
+                                font-size: 14px;
+                                font-family: FontRegular;
+                                color: white;
+                                &.exclusive {
+                                    margin-left: 15px;
+                                    background-color: transparent;
+                                    color: $font-dark-color;
+                                    border-color: $border-grey-color;
+                                }
+                            }                    
+                        }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                        box-shadow: $front-page-public-room-shadow;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+            }
+        }    
+    }
+}
+
+
+@media screen and (min-width: 1550px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(20% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 165px;
+                    }
+                }
+            }
+        }
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(20% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 200px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1450px) and (max-width: 1550px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(25% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(20% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 180px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1450px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(25% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(20% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 165px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1250px) and (max-width: 1350px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(25% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 180px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1250px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(33% - 25px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(25% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 200px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) and (max-width: 1200px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(25% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 165px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(33% - 25px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 165px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1100px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(33% - 25px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 200px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1024px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(33% - 25px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 150px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1024px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(33% - 25px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 180px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 875px) and (max-width: 950px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(50% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 875px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(50% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 820px) and (max-width: 950px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    .mx_VotePage_Public_room {
+                        width: calc(33% - 25px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 165px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 750px) and (max-width: 820px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            padding: 0 30px !important;
+            .mx_VotePage_Public_groups {
+                .mx_VotePage_Public_room {
+                    width: calc(50% - 27px) !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 150px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .mx_VotePage {
+        .mx_VotePage_Chat_category_body {
+            .mx_VotePage_Public_groups {
+                justify-content: center !important;
+                .mx_VotePage_Public_room {
+                    width: 250px !important;
+                    .mx_VotePage_Public_room_img {
+                        height: 200px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: 700px) and (max-width: 820px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    justify-content: flex-start !important;
+                    .mx_VotePage_Public_room {
+                        width: calc(50% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 200px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 630px) and (max-width: 700px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    justify-content: flex-start !important;
+                    .mx_VotePage_Public_room {
+                        width: calc(50% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 180px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 530px) and (max-width: 630px) {
+    .mx_VotePage {
+        &.mx_VotePage_minimized {
+            .mx_VotePage_Chat_category_body {
+                padding: 0 30px !important;
+                .mx_VotePage_Public_groups {
+                    justify-content: flex-start !important;
+                    .mx_VotePage_Public_room {
+                        width: calc(50% - 27px) !important;
+                        .mx_VotePage_Public_room_img {
+                            height: 150px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

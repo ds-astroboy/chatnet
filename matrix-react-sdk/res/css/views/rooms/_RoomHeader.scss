@@ -1,0 +1,495 @@
+/*
+Copyright 2015, 2016 OpenMarket Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.mx_RoomHeader_nav {
+    position: relative;
+    font-family: 'Inter';
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-top: 5px;
+    height: 77px;
+}
+
+.mx_RoomHeader_navbar {
+    height: 44px;
+}
+
+.mx_RoomHeader_navbar li {
+    margin-right: 10px;
+    margin-bottom: -10px;
+    &.active {
+        &::after {
+            content: " ";
+            display: block;
+            border-top: 2px solid #0ad8a1;
+            border-bottom: 2px solid #0ad8a1;
+            border-radius: 2px;
+        }
+    }
+}
+
+.mx_RoomHeader_navbar a {
+    margin: 6px;
+    color: #45474a !important;
+    &.disabled {
+        color: rgba(0,0,0,.3) !important;
+    }
+    .members-lock {
+        display: inline-block;
+        background-image: url("$(res)/img/podium/padlock-mystery-01.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 13px;
+        height: 13px;
+        margin-right: 3px;        
+    }
+}
+
+.mx_RoomHeader {
+    z-index: 1;
+    flex: 0 0 50px;
+    border-bottom: 1px solid $primary-hairline-color;
+    background-color: $roomheader-bg-color;
+    border-bottom: 1px solid #DADFE5;
+    
+    .mx_RoomHeader_e2eIcon {
+        height: 12px;
+        width: 12px;
+
+        .mx_E2EIcon {
+            margin: 0;
+            position: absolute;
+            height: 12px;
+            width: 12px;
+        }
+    }
+}
+
+.mx_RoomHeader_wrapper {
+    margin: auto;
+    height: 77px;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    padding: 0 10px 0 18px;
+
+    .mx_InviteOnlyIcon_large {
+        margin: 0;
+    }
+}
+
+.mx_RoomHeader_spinner {
+    flex: 1;
+    height: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.mx_RoomHeader_textButton {
+    @mixin mx_DialogButton;
+    margin-right: 8px;
+    margin-top: -5px;
+}
+
+.mx_RoomHeader_textButton:hover {
+    @mixin mx_DialogButton_hover;
+}
+
+.mx_RoomHeader_textButton_danger {
+    background-color: $warning-color;
+}
+
+.mx_RoomHeader_cancelButton {
+    cursor: pointer;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.mx_RoomHeader_buttons {
+    display: flex;
+    background-color: transparent;
+}
+
+.mx_RoomHeader_info {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.mx_RoomHeader_simpleHeader {
+    line-height: $font-52px;
+    color: $roomheader-color;
+    font-size: $font-18px;
+    font-weight: 600;
+    overflow: hidden;
+    margin-left: 63px;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+.mx_RoomHeader_simpleHeader .mx_RoomHeader_cancelButton {
+    float: right;
+}
+
+.mx_RoomHeader_simpleHeader .mx_RoomHeader_icon {
+    margin-left: 14px;
+    margin-right: 24px;
+    vertical-align: -4px;
+}
+.mx_RoomHeader_Name_Category {
+    margin-right: 10px;
+    margin-top: 16px;
+    height: 54px;
+    border-radius: 4px;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    max-width: 25%;
+    position: relative;
+    .mx_RoomHeader_subtitle {
+        display: flex;
+        align-items: center;
+        .mx_RoomHeader_subtitle_private_icon {
+            width: 17px;
+            height: 17px;
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                mask-image: url("$(res)/img/shield.svg");
+                mask-position: center;
+                mask-size: cover;
+                mask-repeat: no-repeat;
+                background-color: #C1C6CD;
+            }
+        }
+        .mx_RoomHeader_subtitle_history {
+            margin-left: 5px;
+            color: $font-grey-color;
+            font-size: 13px;
+        }
+    }
+}
+
+.mx_RoomHeader_name {
+    flex: 0 1 auto;
+    overflow: hidden;
+    color: $roomheader-color;
+    font-weight: 600;
+    font-size: $font-14px;
+    margin: 0;
+    border-bottom: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    font-family: FontBold;
+    width: 100%;
+}
+.mx_RoomHeader_Category {
+    padding: 3px 5px;
+    border-radius: 9999px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    .icon {
+        width: 12px;
+        height: 12px;
+        background-image: url("$(res)/img/category-hashtag-bubble.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;                                        
+    }
+    .mx_Category_name {
+        margin-left: 5px;
+        font-size: $font-9px;
+        font-family: FontRegular;
+        // max-width: 50%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+
+
+.mx_RoomHeader_nametext {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 5px;
+}
+
+.mx_RoomHeader_settingsHint {
+    color: $settings-grey-fg-color !important;
+}
+
+.mx_RoomHeader_searchStatus {
+    font-weight: normal;
+    opacity: 0.6;
+}
+
+.mx_RoomHeader_name,
+.mx_RoomHeader_avatar,
+.mx_RoomHeader_avatarPicker,
+.mx_RoomHeader_avatarPicker_edit,
+.mx_RoomHeader_avatarPicker_remove {
+    cursor: pointer;
+}
+
+.mx_RoomHeader_avatarPicker_remove {
+    position: absolute;
+    top: -11px;
+    right: -9px;
+}
+
+.mx_RoomHeader_name:hover div:not(.mx_RoomHeader_editable) {
+    color: $accent-color;
+}
+
+.mx_RoomHeader_placeholder {
+    color: $settings-grey-fg-color !important;
+}
+
+.mx_RoomHeader_editable {
+    border-bottom: 1px solid $strong-input-border-color !important;
+    min-width: 150px;
+    cursor: text;
+}
+
+.mx_RoomHeader_editable:focus {
+    border-bottom: 1px solid $accent-color !important;
+    outline: none;
+    box-shadow: none;
+}
+
+.mx_RoomHeader_topic {
+    flex: 1;
+    color: $roomtopic-color;
+    font-weight: 400;
+    font-size: $font-12px;
+    margin: 0 7px;
+    padding: 2px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid transparent;
+    line-height: 1.2em;
+    max-height: 2.5em;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -ms-box-orient: vertical;
+    box-orient: vertical;
+    -webkit-line-clamp: 2;
+    -moz-line-clamp: 2;
+    -ms-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+@media  screen and (min-width: 1350px) {
+    .mx_RoomHeader_topic {
+        padding-right: 50px;
+    }    
+}
+
+@media  screen and (min-width: 1000px) and (max-width: 1350px) {
+    .mx_RoomHeader_topic {
+        padding-right: 100px;
+    }    
+}
+
+.mx_RoomHeader_avatar {
+    flex: 0;
+    margin: 0 15px 0 7px;
+    position: relative;
+    .mx_DecoratedRoomAvatar {
+        margin-right: 1rem;
+    }
+    .mx_DecoratedRoomAvatar_icon {
+        width: 12px !important;
+        height: 12px !important;
+        bottom: -3px !important;
+        right: -3px !important;
+        &::before {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    } 
+
+    .mx_DecoratedRoomAvatar_cutout {
+        margin-left: -5px;
+        margin-right: 5px;
+    }
+}
+
+.mx_RoomHeader_avatar .mx_BaseAvatar_image {
+    object-fit: cover;    
+}
+
+.mx_RoomHeader_avatar .mx_DecoratedRoomAvatar_icon_globe {
+    width: 12px !important;
+    height: 12px !important;
+    &::before {
+        width: 12px !important;
+        height: 12px !important;
+        background-color: $font-grey-color;
+    }
+}
+
+.mx_RoomHeader_avatarPicker {
+    position: relative;
+}
+
+.mx_RoomHeader_avatarPicker_edit {
+    position: absolute;
+    left: 16px;
+    top: 18px;
+}
+
+.mx_RoomHeader_avatarPicker_edit > label {
+    cursor: pointer;
+}
+
+.mx_RoomHeader_avatarPicker_edit > input {
+    display: none;
+}
+
+.mx_RoomHeader_button {
+    position: relative;
+    margin-left: 1px;
+    margin-right: 1px;
+    cursor: pointer;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+    margin: 0 10px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px; // center with parent of 32px
+        left: 2px; // center with parent of 32px
+        height: 24px;
+        width: 24px;
+        background-color: $room-header-button-color;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+    }
+
+    &:hover {
+        background: rgba($accent-color, 0.1);
+
+        &::before {
+            background-color: $accent-color;
+        }
+    }
+}
+
+.mx_RoomHeader_forgetButton::before {
+    mask-image: url('$(res)/img/element-icons/leave.svg');
+    width: 26px;
+}
+
+.mx_RoomHeader_appsButton::before {
+    mask-image: url('$(res)/img/element-icons/room/apps.svg');
+}
+.mx_RoomHeader_appsButton_highlight::before {
+    background-color: $accent-color;
+}
+
+.mx_RoomHeader_searchButton::before {
+    mask-image: url('$(res)/img/element-icons/room/search-inset.svg');
+}
+
+.mx_RoomHeader_voiceCallButton::before {
+    mask-image: url('$(res)/img/element-icons/call/voice-call.svg');
+
+    // The call button SVG is padded slightly differently, so match it up to the size
+    // of the other icons
+    mask-size: 20px;
+    mask-position: center;
+}
+
+.mx_RoomHeader_videoCallButton::before {
+    mask-image: url('$(res)/img/element-icons/call/video-call.svg');
+}
+
+.mx_RoomHeader_showPanel {
+    height: 16px;
+}
+
+.mx_RoomHeader_voipButton {
+    display: table-cell;
+}
+
+.mx_RoomHeader_voipButtons {
+    margin-top: 18px;
+}
+
+.mx_RoomHeader_UserInfoButton {
+    margin: 0 15px;
+    position: relative;
+    &.connected {
+        .mx_UserMenu_minimized {
+            img {
+                mask-image: url("$(res)/img/element-icons/roomlist/decorated-avatar-mask.svg");
+                mask-position: center;
+                mask-size: cover;
+                mask-repeat: no-repeat;
+            }
+        }
+    }
+    .mx_RoomHeader_UserInfoButton_wallet {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width: 12px;
+        height: 12px;
+        img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+    .mx_UserMenu  {
+        .mx_BaseAvatar_initial {
+            z-index: 1 !important;
+        }
+    }
+}
+
+.mx_RoomHeader_wrapper {
+    .mx_RoomHeader_LeftButton {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        &::before {
+            width: 100%;
+            height: 100%;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            mask-image: url('$(res)/img/left-arrow.svg');
+            mask-position: center;
+            mask-size: cover;
+            mask-repeat: no-repeat;
+            background-color: $font-purple-color;
+        }
+    }
+}

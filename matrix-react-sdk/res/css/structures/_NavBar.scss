@@ -1,0 +1,359 @@
+.mx_NavBar {
+    // background-color: $nav-bar-bg-color;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    .mx_NavBar_Search_Buttons {
+        display: flex;
+        align-items: center;
+        .mx_NavBar_Logo_Search {
+            display: flex;
+            align-items: center;
+            .mx_NavBar_Logo {
+                width: 120px;
+                height: 25px;
+                position: relative;
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    mask-image: url("$(res)/img/cafeteria-name-svg.svg");
+                    mask-repeat: no-repeat;
+                    mask-position: center;
+                    background-color: $navbar-cafeteria-logo-color;
+                }
+                img {
+                    height: 20px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .mx_SearchBar {
+                position: relative;
+                .mx_SearchBar_input {
+                    border-radius: 9999px;
+                    width: 350px;
+                    transition: all 1.5s;
+                    background-color: white;
+                    height: 35px;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    margin: 0 !important;
+                    input {
+                        padding-left: 35px;
+                        border: none;
+                        flex: 1;
+                        color: $font-dark-color !important;
+                        font-family: FontRegular;
+                    }
+                    &::before {
+                        content: '';
+                        width: 20px;
+                        height: 20px;
+                        position: absolute;
+                        left: 10px;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                        mask-image: url("$(res)/img/search-icon.svg");
+                        mask-position: center;
+                        mask-size: cover;
+                        mask-repeat: no-repeat;
+                        background-color: $navbar-search-icon-color;
+                    }
+                }
+            }
+        }
+
+        .mx_NavBar_PageButtonGroup {
+            margin: 0 10px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 9999px;
+            padding: 0 10px 0 13px;
+            .mx_NavBar_PageButtonGroup_button {
+                &.icon {
+                    transition: all 0.2s;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    &.vote {
+                        width: 22px;
+                        height: 25px;
+                        background-image: url("$(res)/img/vote_icon.svg");
+                    }
+                    &.nfts-tokens {
+                        width: 25px;
+                        height: 25px;
+                        margin-left: 10px;
+                        background-image: url("$(res)/img/checklist.png");
+                    }
+                }
+                &:hover {
+                    transition: all 0.2s;
+                    &.vote {
+                        width: 25px;
+                        height: 28px;
+                    }
+                    &.nfts-tokens {
+                        width: 28px;
+                        height: 28px;
+                    }
+                }
+            }
+        }
+    }
+    .mx_NavBar_UserManage {
+        display: flex;
+        align-items: center;
+        .mx_NavBar_CreateRoomButton {
+            cursor: pointer;
+            .mx_NavBar_large_button {
+                border: 1px solid white;
+            }
+            .mx_NavBar_small_button {
+                border-radius: 50%;
+                display: none;
+            }
+            &:hover {
+                opacity: 1;
+            }
+        }
+        // .mx_NavBar_SignInButton {
+        //     transition: all 0.5s;
+        //     &:hover {
+        //         transition: all 0.5s;
+        //         cursor: pointer;
+        //         background-color: $navbar-bt-hover-bg-color;
+        //         color: $navbar-bt-hover-text-color;
+        //     }
+        // }
+        .mx_UserMenu {
+            margin-left: 15px;
+        }
+        .mx_NavBar_SwitchThemeButton {
+            border: 1px solid $navbar-switch-button-border-color;
+            border-radius: 50%;
+            height: 35px;
+            width: 35px;
+            margin-left: 10px;
+            .mx_UserMenu_contextMenu_themeButton {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    mask-image: $switch-theme-img;
+                    mask-position: center;
+                    mask-size: contain;
+                    mask-repeat: no-repeat;
+                    background-color: $switch-theme-icon-color;
+                }
+            }
+        }
+        .wallet-button {
+            display: none;
+        }
+    }
+    .mx_Navbar_walletButton {
+        margin-left: 10px;
+        background-color: transparent;
+        border: 1px solid white;
+        .mx_Dropdown_option {
+            height: 35px !important;
+            border-bottom: 1px solid $border-grey-color;
+            &#mx_WalletsDropdown__add-option, &#mx_WalletsDropdown_value {
+                border-bottom: none;
+            }
+            &#mx_WalletsDropdown_value {
+                padding: 0 !important;
+            }
+        }
+        .mx_Navbar_walletButton_dropdown_option {
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            &.mx_Wallet_Info {
+                color: $font-dark-white-color;
+                line-height: 1.5;
+            }
+            &.add-option {
+                justify-content: center;
+                color: $font-grey-color;
+                .add-icon {
+                    width: 15px;
+                    height: 15px;
+                    margin-right: 5px;
+                    mask-image: url('$(res)/img/trade-box-add.png');
+                    mask-size: cover;
+                    mask-position: center;
+                    mask-repeat: no-repeat;
+                    background-color: $font-grey-color;
+                }
+            }
+        }
+        #mx_WalletsDropdown_listbox {
+            top: 120% !important;
+        }
+        #mx_WalletsDropdown__connected-wallets {
+            display: none;
+        }
+        .mx_Dropdown_input  {
+            border: none !important;
+        }
+        .mx_Dropdown_arrow {
+            display: none;
+        }
+        .narrow {
+            margin-left: 5px;
+            width: 10px;
+            height: 8px;
+            mask-image: url("$(res)/img/bottom-arrow-black.png");
+            mask-size: cover;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: white;
+        }
+        .mx_Wallet_logo {
+            width: 20px;
+            margin-right: 10px;
+            img {
+                margin: 0 !important;
+                width: 100%;
+            }
+        }
+        .wallet-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            mask-image: url("$(res)/img/wallet-1.svg");
+            mask-size: cover;
+            mask-position: center;
+            mask-repeat: no-repeat;
+            background-color: white;
+            &.connected {
+                background-color: $green-color;
+            }
+        }
+        &:hover {
+            .wallet-icon {
+                background-color: white;
+            }
+        }
+    }
+}
+
+.MuiPaper-root {
+    border-radius: 20px !important;
+    width: 350px !important;
+    padding: 20px;
+    .MuiDialogTitle-root {
+        background-color: transparent !important;
+        .MuiTypography-root {
+            font-size: $font-24px !important;
+            font-family: FontBold !important;
+            color: $font-dark-white-color;
+            text-transform: capitalize;
+            justify-content: center !important;
+            .MuiButtonBase-root {
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                .MuiIconButton-label {
+                    .MuiSvgIcon-root {
+                        width: 1.5em;
+                        height: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+    .MuiDialogContent-root {
+        background-color: $nav-bar-bg-color !important;
+        ul {
+            background: transparent !important;
+            li {
+                background-color: $font-purple-color !important;
+                margin: 10px 0px;
+                border-radius: 9999px;
+                height: 45px;
+                .MuiButtonBase-root {
+                    .MuiButton-label {
+                        color: white !important;
+                        font-family: FontBold !important;
+                        font-size: $font-15px !important;    
+                        text-transform: capitalize !important;   
+                        .MuiSvgIcon-root {
+                            width: 1.5em !important;
+                            height: 1.5em !important;
+                            color: white !important;
+                        }                 
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MuiMenu-paper {
+    top: 50px !important;
+    width: 150px !important;
+    .MuiList-root {
+        .MuiListItem-root {
+            .MuiButtonBase-root {
+                background-color: transparent !important;
+                .MuiButton-label {
+                    font-family: FontRegular !important;
+                    font-size: $font-15px !important;
+                    color: $font-dark-white-color !important;
+                    text-transform: capitalize;
+                }
+            }
+        }
+        .MuiCollapse-root {
+            .MuiCollapse-wrapper {
+                .MuiCollapse-wrapperInner {
+                    li {
+                        font-family: FontRegular !important;
+                        font-size: $font-13px !important;
+                        color: $font-dark-white-color !important;
+                        text-overflow: ellipsis;
+                        width: 100%;
+                        padding: 10px 10px 10px 30px;
+                        display: inherit;
+                        .MuiListItemIcon-root {
+                            position: absolute;
+                            top: 9px;
+                            left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.MuiDialog-root {
+    z-index: 9999999999 !important;
+}
+.mx_WelcomePage {
+    .mx_NavBar {
+        .mx_NavBar_SwitchThemeButton {
+            display: none;
+        }
+    }
+}

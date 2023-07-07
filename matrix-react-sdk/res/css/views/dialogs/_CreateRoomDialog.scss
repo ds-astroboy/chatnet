@@ -1,0 +1,396 @@
+/*
+Copyright 2017 Michael Telatynski <7t3chguy@gmail.com>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.mx_CreateRoomDialog_details {
+    margin-top: 15px;
+    .mx_CreateRoomDialog_details_summary {
+        outline: none;
+        list-style: none;
+        font-weight: 600;
+        cursor: pointer;
+        color: $accent-color;
+        font-family: FontRegular;
+        // list-style doesn't do it for webkit
+        &::-webkit-details-marker {
+            display: none;
+        }
+    }
+    >div {
+        display: flex;
+        align-items: flex-start;
+        margin: 5px 0;
+        input[type=checkbox] {
+            margin-right: 10px;
+        }
+    }
+    p {
+        font-family: FontRegular;
+    }
+}
+
+.mx_CreateRoomDialog_label {
+    text-align: left;
+    padding-bottom: 12px;
+}
+
+.mx_CreateRoomDialog_input_container {
+    padding-right: 20px;
+}
+
+.mx_CreateRoomDialog_input {
+    font-size: $font-15px;
+    border-radius: 3px;
+    border: 1px solid $input-border-color;
+    padding: 9px;
+    color: $primary-fg-color;
+    background-color: $primary-bg-color;
+    width: 100%;
+    font-family: FontRegular;
+}
+
+// needed to make the alias field only grow as wide as needed
+// as opposed to full width
+.mx_CreateRoomDialog_aliasContainer {
+    display: flex;
+    // put margin on container so it can collapse with siblings
+    margin: 10px 0;
+    width: 100%;
+    .mx_RoomAliasField {
+        margin: 0;
+    }
+}
+
+.mx_CreateRoomDialog {
+    &.mx_Dialog_fixedWidth {
+        width: 500px;
+    }
+    .mx_Dialog_content {
+        margin-bottom: 40px;
+        .mx_Dialog_item {
+            margin-top: 40px;
+            display: flex;
+            &_logo {
+                width: 30px;
+                min-width: 30px;
+                img {
+                    width: 100%;
+                }
+            }
+            &_body {
+                width: 100%;
+                margin-left: 20px;
+            }
+            &_title {
+                font-size: $font-14px;
+            }
+            .mx_CategoryDropdown {
+                margin-left: 30px;
+                flex: 1;
+                &.empty {
+                    .mx_Dropdown_input {
+                        border: 1px solid $warning-color;
+                    }
+                }
+            }
+            .mx_Field_input, .mx_Dropdown_input {
+                margin: 0;
+                width: 100%;
+                border-radius: 9999px;
+                border: none;
+                box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.16);
+                input {
+                    border-radius: 9999px;
+                }
+            }
+        }
+        .mx_CreateRoomDialog_wrap {
+            position: relative;
+            width: 100%;
+            &.disable {
+                input {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+                select {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+                option {
+                    cursor: not-allowed;
+                }
+                .mx_CreateRoomDialog_option {
+                    opacity: 0.5;
+                    cursor: not-allowed;
+                }
+                .mx_CreateRoomDialog_radio_button {
+                    cursor: not-allowed;
+                }
+            }
+            .mx_CreateRoomDialog_option {
+                margin-top: 20px;
+                .mx_CreateRoomDialog_option_header {
+                    display: flex;
+                    align-items: center;
+                    .mx_CreateRoomDialog_option_content {
+                        margin-left: 10px;
+                        font-family: FontBold;
+                        color: $font-dark-color;
+                    }
+                }
+                .mx_CreateRoomDialog_option_body {
+                    padding-left: 32px;
+                    .mx_CreateRoomDialog_currency_wrap {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .mx_CreateRoomDialog_Dropdown {
+                            width: 60%;
+                            .mx_CreateRoomDialog_currencyOption {
+                                display: flex;
+                                .mx_CreateRoomDialog_currencyLogo {
+                                    img {
+                                        width: 20px;
+                                        height: 20px;
+                                    }
+                                }
+                            }
+                        }
+                        .mx_CreateRoomDialog_AmountInput {
+                            // width: 30%;
+                            margin-left: 20px;
+                            max-width: 120px;
+                        }                
+                    }
+                    .mx_CreateRoomDialog_joinConditions {
+                        display: flex;
+                        align-items: center;
+                        .mx_CreateRoomDialog_joinCondition {
+                            width: 40%;
+                            display: flex;
+                            align-items: center;
+                            .mx_CreateRoomDialog_joinCondition_content {
+                                margin-left: 10px;
+                                font-size: 12px;
+                                font-family: FontRegular;
+                                color: $font-dark-color;
+                            }
+                        }
+                    }
+                    .mx_CreateRoomDialog_option_description {
+                        margin: 10px 0;
+                        font-size: $font-12px;
+                        font-family: FontRegular;
+                        color: $muted-fg-color;
+                    }
+                    .mx_CreateRoomDialog_option_select_item {
+                        display: flex;
+                        align-items: center;
+                        .mx_CreateRoomDialog_option_item {
+                            width: 70px;
+                            height: 70px;
+                            position: relative;
+                            border-radius: 15px;
+                            border: 1px solid $border-grey-color;
+                            overflow: hidden;
+                            position: relative;
+
+                            &::after {
+                                content: '';
+                                width: 25px;
+                                height: 25px;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                mask-position: center;
+                                mask-size: contain;
+                                mask-repeat: no-repeat;
+                                mask-image: url("$(res)/img/plus.png");
+                                background-color: $border-grey-color;
+                                transition: all 0.5s;
+                            }
+    
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 12px;
+                            }
+    
+                            .mx_CreateRoomDialog_option_bg {
+                                border-radius: 12px;
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                background-color: rgba(0, 0, 0, 0.5);
+                                transition: all 0.5s;
+                                visibility: hidden;
+                            }
+    
+                            &:hover {
+                                cursor: pointer;
+                                .mx_CreateRoomDialog_option_bg {
+                                    transition: all 0.5s;
+                                    visibility: visible;
+                                }
+                                &::after {
+                                    background-color: white;
+                                    transition: all 0.5s;
+                                } 
+                            }
+                            &.item {
+                                border-radius: 15px; /*1*/
+                                border: 3px solid transparent; /*2*/
+                                background:linear-gradient(90deg, #9244d9, #05dba3) border-box; /*3*/
+                                -webkit-mask-composite: destination-out; /*5'*/
+                                mask-composite: exclude; /*5*/   
+                                &::after {
+                                    visibility: hidden;
+                                }                 
+                                &:hover {
+                                    &::after {
+                                        visibility: visible;
+                                        background-color: white;
+                                        transition: all 0.5s;
+                                    }                                     
+                                }        
+                            }
+                        }
+                        .mx_CreateRoomDialog_option_item_info {
+                            margin-left: 10px;
+                            .mx_CreateRoomDialog_option_item_name {
+                                display: flex;
+                                align-items: center;
+                                p {
+                                    font-family: FontBold;
+                                    color: $font-dark-color;
+                                    margin-right: 10px;
+                                }
+                                img {
+                                    width: 20px;
+                                }
+                            }
+                            .mx_CreateRoomDialog_option_item_content {
+                                font-size: $font-12px;
+                                font-family: FontRegular;
+                                color: $font-grey-color;
+                            }
+                        }
+                    }
+                }
+            }
+            .mx_CreateRoomDialog_wallet_connect_button {
+                cursor: pointer;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                width: 100%;
+                padding: 15px 0;
+                background-color: $green-color;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                transition: all 0.5s;
+                p {
+                    text-align: center;
+                    font-size: 13px;
+                    color: white;
+                    margin: 0 !important;
+                }
+                &:hover {
+                    background-color: $font-purple-color;
+                    transition: all 0.5s;
+                }
+            }
+        }
+    }
+    p,
+    .mx_Field_input label {
+        color: $muted-fg-color;
+    }
+    .mx_SettingsFlag {
+        display: flex;
+    }
+    .mx_SettingsFlag_label {
+        flex: 1 1 0;
+        min-width: 0;
+        // font-weight: 600;
+        // font-family: FontBold;
+        color: $font-dark-white-color;
+    }
+    .mx_ToggleSwitch {
+        flex: 0 0 auto;
+        margin-left: 30px;
+    }
+    .mx_CreateRoomDialog_topic {
+        margin-bottom: 36px;
+    }
+    .mx_Dialog_content>.mx_SettingsFlag {
+        margin-top: 24px;
+    }
+    p {
+        margin: 0 85px 0 0;
+        font-size: $font-12px;
+        font-family: FontRegular;
+    }
+    // .mx_CreateRoomButton {
+    //     button {
+    //         color: $font-dark-white-color;
+    //         font-family: FontRegular;
+    //         transition: all 0.5s;
+    //     }
+    //     button:hover {
+    //         background-color: $font-purple-color;
+    //         color: white;
+    //         transition: all 0.5s;
+    //     }
+    // }
+    .mx_CreateRoomAvatar_Upload {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        .mx_ProfileSettings_avatar_change {
+            margin-left: 20px;
+            width: 225px;
+            div {
+                font-family: FontRegular;
+                .color_green {
+                    color: $green-color;
+                    cursor: pointer;
+                    &:hover {
+                        color: $font-purple-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mx_CreateRoomDialog_radio_button {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $green-color;
+    border-radius: 50%;
+    cursor: pointer;
+    &.active {
+        width: 5px;
+        height: 5px;
+        border: 8.5px solid $green-color;
+        border-radius: 50%;
+    }
+}

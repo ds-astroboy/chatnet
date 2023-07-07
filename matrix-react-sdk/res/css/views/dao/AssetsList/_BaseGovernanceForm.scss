@@ -1,0 +1,15 @@
+.mx_BaseGovernanceForm {
+    &_field {
+        &.range {
+            border: none !important;
+            input {
+                padding: 0 !important;
+            }
+        }
+    }
+    &_supplyPercent {
+        font-size: $font-14px;
+        font-family: FontBold;
+        color: $font-grey-white-color;
+    }
+}

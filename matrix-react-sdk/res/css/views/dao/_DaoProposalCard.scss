@@ -1,0 +1,86 @@
+.mx_DaoProposalCard {
+    cursor: pointer;
+    margin: 20px 0;
+    border: 1px solid $border-grey-color;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    &_info {
+        padding: 20px;
+    }
+    &_header {
+        display: flex;
+        align-items: center;
+    }
+    &_creatorName {
+        font-size: $font-13px;
+        font-family: FontRegular;
+        color: $font-grey-white-color;
+        margin-left: 5px;
+    }
+    &_body {
+        margin: 10px 0 30px;
+    }
+    &_title {
+        text-align: left;
+        font-family: FontBold;
+        font-size: $font-18px;
+        color: $font-dark-white-color;
+        word-break: break-all;
+    }
+    &_content {
+        margin-top: 10px;
+        text-align: left;
+        font-family: FontRegular;
+        font-size: $font-12px;
+        color: $font-grey-white-color;
+        height: 55px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -ms-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-line-clamp: 3;
+        -moz-line-clamp: 3;
+        -ms-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+        word-break: break-word;
+    }
+    &_footer {
+        text-align: left;
+        font-family: FontRegular;
+        font-size: $font-12px;
+        color: $font-grey-white-color;
+        span {
+            padding: 2px 8px;
+            background-color: $border-grey-color;
+            border-radius: 9999px;
+        }
+    }
+    &_votingStatusWrap {
+        min-width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $warning-color;
+        &.voting {
+            background-color: $green-color;
+        }
+    }
+    &_votingStatus_lable {
+        font-family: FontBold;
+        font-size: $font-18px;
+        color: white;
+    }
+    &_votingStatus_result {
+        font-family: FontRegular;
+        font-size: $font-14px;
+        color: white;
+    }
+    &:hover {
+        transition: all 0.5s;
+        box-shadow: $front-page-public-room-shadow;
+    }
+}

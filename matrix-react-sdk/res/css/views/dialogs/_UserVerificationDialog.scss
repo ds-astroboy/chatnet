@@ -1,0 +1,150 @@
+.mx_UserVerificationDialog {
+  width: 430px;
+  min-width: 430px;
+  &_modalNotice {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  &_header {
+    // border-top: 1px solid $border-grey-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_taps {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+  &_tap {
+    cursor: pointer;
+    font-size: $font-14px;
+    font-family: OpensansExtraBold;
+    color: $font-grey-white-color;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    margin: 0 10px;
+    &:hover {
+      color: $font-dark-white-color;
+    }
+    &.active {
+      border-bottom-color: $font-purple-color;
+      color: $font-dark-white-color;
+    }
+  }
+  &_body {
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_currency {
+    padding: 20px;
+    &_header {
+      margin-bottom: 10px;
+      padding: 0 10px;
+    }
+    &_title {
+      font-size: $font-14px;
+      color: $font-grey-white-color;
+      margin-bottom: 10px;
+    }
+    &_dropdown {
+      width: 75%;
+      .mx_Dropdown_input {
+        border-radius: 9999px;
+      }
+      &_option {
+        display: flex;
+        align-items: center;
+        &_logo {
+          width: 20px;
+          height: 20px;
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        }
+        &_amount {
+          margin-left: 10px;
+          font-size: $font-13px;
+          font-family: OpensansExtraBold;
+          color: $font-dark-white-color;
+        }
+      }
+    }
+    &_body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &_item {
+      border-radius: 15px;
+      border: 1px solid $border-grey-color;
+      width: 75px;
+      height: 75px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &_logo {
+        width: 45%;
+        height: 45%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      &.selected {
+        width: 71px;
+        height: 71px;
+        border: 3px solid $green-color;
+      }
+    }
+    &_footer {
+      display: flex;
+      justify-content: center;
+    }
+    &_name {
+      margin-top: 10px;
+      font-size: $font-14px;
+      color: $font-dark-white-color;
+      font-family: OpensansExtraBold;
+    }
+  }
+  &_collectables {
+    padding: 20px;
+    padding-top: 12px;
+    &_body {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &_item {
+      border-radius: 15px;
+      border: 1px solid $border-grey-color;
+      width: 75px;
+      height: 75px;
+      margin: 10px;
+      overflow: hidden;
+      &.selected {
+        width: 71px;
+        height: 71px;
+        border: 3px solid $green-color;
+      }
+      &_logo {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+    &_footer {
+      display: flex;
+      justify-content: center;
+    }
+    &_info {
+      margin-top: 10px;
+      font-size: $font-14px;
+    }
+  }
+}

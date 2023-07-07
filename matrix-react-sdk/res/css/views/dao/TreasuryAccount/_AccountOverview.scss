@@ -1,0 +1,181 @@
+.mx_AccountOverview {
+    &_info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_title {
+        font-size: $font-20px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+    }
+    &_view {
+        display: flex;
+        align-items: center;
+    }
+    &_viewCollection {
+        margin-right: 10px;
+        font-size: $font-13px;
+        color: $font-grey-white-color;
+        font-family: FontBold;
+    }
+    &_viewLink {
+        display: flex;
+        align-items: center;
+        &_content {
+            font-size: $font-13px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_icon {   
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+    }
+    &_buttonGroup {
+        box-sizing: border-box !important;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_button {
+        height: 45px;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9999px;
+        border: 1px solid $font-purple-color;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+        font-size: $font-14px;
+        transition: all 0.5s;
+        position: relative;
+        &:hover {
+            transition: all 0.5s;
+            background-color: $font-purple-color;
+            color: white;
+        }
+        &_tooltip {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            border-radius: 8px;
+            box-shadow: 4px 4px 12px 0 $menu-box-shadow-color;
+            background-color: $inverted-bg-color;
+            color: $accent-fg-color;
+            padding: 8px;
+            border: 0;
+            font-family: FontRegular;
+            transform: translate(0, -120%);
+            white-space: nowrap;
+            line-height: $font-14px;
+            font-size: $font-12px;
+            pointer-events: none;
+            font-weight: 500;
+        }
+    }
+    &_investmentSection {
+        margin: 20px 0;
+        &_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_title {
+            color: $font-dark-white-color;
+            font-family: FontBold;
+            font-size: $font-18px;
+        }
+        &_button {
+            display: flex;
+            align-items: center;
+            &_icon {
+                width: 18px;
+                height: 18px;
+            }
+            &_content {
+                margin-left: 5px;
+                color: $font-grey-white-color;
+                font-family: FontBold;
+                font-size: $font-13px;
+            }
+        }
+        &_body {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid $border-grey-color;
+            border-radius: 5px;
+            &_content {
+                text-align: center;
+                color: $font-grey-white-color;
+                font-family: FontBold;
+                font-size: $font-13px;
+            }
+        }
+    }
+    &_tokenAccount {
+        margin: 20px 0;
+        &_title {
+            color: $font-dark-white-color;
+            font-family: FontBold;
+            font-size: $font-18px;
+        }
+    }
+    &_activity {
+        margin: 20px 0;
+        &_title {
+            color: $font-dark-white-color;
+            font-family: FontBold;
+            font-size: $font-18px;
+        }
+        &_body {
+            margin-top: 20px;
+        }
+        &_info {
+            padding: 20px;
+            border: 1px solid $border-grey-color;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.5s;
+            &:hover {
+                border-color: $font-purple-color;
+                transition: all 0.5s;
+            }
+        }
+        &_signature {
+            color: $font-grey-white-color;
+            font-family: FontBold;
+            font-size: $font-13px;
+        }
+        &_view {
+            display: flex;
+            align-items: center;
+        }
+        &_time {
+            color: $font-grey-white-color;
+            font-family: FontRegular;
+            font-size: $font-13px;
+        }
+        &_icon {
+            margin-left: 10px;
+            width: 18px;
+            height: 18px;
+        }
+        &_content {
+            padding: 20px;
+            text-align: center;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+            font-size: $font-13px;
+            border: 1px solid $border-grey-color;
+            border-radius: 5px;
+        }
+    }
+}

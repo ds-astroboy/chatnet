@@ -1,0 +1,17 @@
+.mx_HoldTokensTotalPrice {
+    padding: 10px;
+    background-color: $border-grey-color;
+    border-radius: 10px;
+    &_title {
+        text-align: center;
+        font-size: $font-16px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+    }
+    &_price {
+        text-align: left;
+        font-size: $font-25px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+    }
+ }
