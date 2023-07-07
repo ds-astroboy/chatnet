@@ -1,0 +1,144 @@
+.mx_InstructionCard {
+    &_header {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: 60px;
+        border-bottom: 1px solid $border-grey-color;
+    }
+    &_title {
+        font-size: $font-14px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        margin-right: 10px;
+    }
+    &_logo {
+        width: 20px;
+        height: 20px;
+    }
+    &_program {
+        border-bottom: 1px solid $border-grey-color;
+        padding: 0 20px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_title {
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_body {
+            display: flex;
+            align-items: center;
+        }
+        &_label {
+            font-size: $font-13px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_content {
+            font-size: $font-12px;
+            font-family: FontRegular;
+            color: $font-grey-white-color;
+        }
+        &_link {
+            width: 20px;
+            height: 20px;
+            margin-left: 5px;
+        }
+    }
+    &_accounts {
+
+    }
+    &_account {
+        border-bottom: 1px solid $border-grey-color;
+        padding: 0 20px;
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_header {
+        }
+        &_index {
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_name {
+            font-size: $font-13px;
+            font-family: FontRegular;
+            color: $font-grey-white-color;
+        }
+        &_body {
+            display: flex;
+            align-items: center;
+        }
+        &_info {
+            
+        }
+        &_pubkey {
+            font-size: $font-13px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_label {
+            font-size: $font-12px;
+            font-family: OpensasnRegular;
+            color: $font-grey-white-color;
+            text-align: right;
+        }
+        &_link {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+    }
+    &_data {
+        padding: 20px;
+        text-align: left;
+        &_title {
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+        &_nftImage {
+
+        }
+        &_ui {
+            font-size: $font-12px;
+            font-family: OpensasnRegular;
+            color: $font-grey-white-color;
+        }
+    }
+    
+    &_buttonGroup {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin: 20px 0 30px;
+        .mx_AccessibleButton, .mx_AccessibleTooltipButton {
+            height: 45px;
+            min-width: 100px;
+            padding: 0 20px;
+            border: 1px solid $border-grey-color;
+            border-radius: 9999px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $font-dark-white-color;
+            font-size: $font-13px;
+            font-family: FontBold;
+            margin: 0 10px;
+            &:hover {
+                background-color: $font-purple-color;
+                border-color: $font-purple-color;
+                color: white;
+            }
+        }
+        .mx_ExecuteInstructionButton_icon {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

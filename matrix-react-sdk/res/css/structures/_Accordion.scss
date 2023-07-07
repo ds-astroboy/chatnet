@@ -1,0 +1,80 @@
+/* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  background-image: linear-gradient(rgb(245, 245, 245));  
+  padding: 2px;
+  &.active {
+    background-image: linear-gradient(90deg,#3e45a0,#0068bb,#0086c6,#00a2c6,#00bbc1,#00c4af,#35cb92,#6bcf6e,#93c649,#b6ba28,#d7aa11,#f5961d);
+  }
+}
+
+.accordion__wrap {
+  border-radius: 19px;
+  background-color: white;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  color: $font-grey-white-color;
+  cursor: pointer;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  color: $font-dark-white-color;
+}
+
+/* Style the accordion content title */
+.accordion__title {
+  font-weight: 600;
+  font-size: $font-13px;
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+/* Style to rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+/* Style the accordion content text */
+.accordion__text {
+  font-weight: 400;
+  font-size: $font-13px;
+  padding: 18px;
+}
+.arrow-top {
+  border-left: solid 5px transparent; 
+  border-right: solid 5px transparent; 
+  border-bottom: solid 10px rgb(124, 124, 124); 
+  height: 0; 
+  width: 0; 
+}
+.arrow-bottom {
+  border-left: solid 5px transparent; 
+  border-right: solid 5px transparent; 
+  border-top: solid 10px rgb(186, 185, 185); 
+  height: 0; 
+  width: 0; 
+}

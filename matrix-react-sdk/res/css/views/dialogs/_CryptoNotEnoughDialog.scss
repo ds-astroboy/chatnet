@@ -1,0 +1,47 @@
+
+.mx_CryptoNotEnoughDialog {
+    &.mx_Dialog_fixedWidth {
+        width: 450px;
+    }
+    .mx_CryptoNotEnoughDialog_bg {
+        margin: 50px 0px;
+        display: flex;
+        justify-content: center;
+        img {
+            width: 150px;
+        }
+    }
+    .mx_CryptoNotEnoughDialog_statement {
+        .mx_CryptoNotEnoughDialog_statement1 {
+            font-size: 20px;
+            color: $font-dark-color;
+            padding: 0px 30px;
+            text-align: center;
+        }
+        .mx_CryptoNotEnoughDialog_statement2 {
+            color: $font-grey-color;
+            text-align: center;
+            padding: 30px 60px;
+        }
+    }
+    .mx_CryptoNotEnoughDialog_Button {
+        margin-top: 150px;
+        button {
+            width: 100%;
+            border-radius: 9999px;
+            padding: 10px;
+            font-family: FontBold;
+            font-size: 16px;
+            transition: all 0.5s;
+            color: $font-dark-color;
+            border-color: $border-grey-color;
+            &:hover {
+                cursor: pointer;
+                border-color: $font-purple-color;
+                background-color: $font-purple-color;
+                transition: all 0.5s;
+                color: white;
+            }
+        }
+    }
+}

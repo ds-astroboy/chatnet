@@ -1,0 +1,33 @@
+.mx_AddWalletModal {
+    margin-top: 20px;
+    &_error {
+        &_content {
+            font-family: FontRegular;
+            font-size: $font-12px;
+            color: $warning-color;
+        }
+    }
+    &_buttonGroup {
+        display: flex;
+        align-items: center;
+    }
+    &_button {
+        width: 120px;
+        height: 45px;
+        font-size: $font-14px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        &:hover {
+            transition: all 0.5s;
+            background-color: $font-purple-color;
+            color: white;
+        }
+    }
+}
+

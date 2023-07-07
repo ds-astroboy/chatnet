@@ -1,0 +1,223 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+    <style type="text/css">
+        /* By default, hide the custom IS stuff - enabled in JS */
+        @font-face {
+            font-family: "FontBold";
+            font-style: normal;
+            font-display: swap;
+            src: url("/welcome/fonts/font-Inter/Inter-Bold.ttf");
+        }
+        body {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: linear-gradient(345deg, #09D8A2 -7.33%, #0EC9A1 -1.37%, #1F9AA1 19.56%, #2D74A0 40.48%, #3856A0 61.16%, #3F41A0 81.45%, #4434A0 101.11%, #4630A0 119.5%);
+            max-width: 680px;
+            margin: auto;
+            font-family: FontBold;
+        }
+
+        .mx_HomePage_content {
+            width: 100vw; 
+            height: 100vh;
+            color: white;
+            font-size: 1.4em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .mx_HomePage_content .fruit-image {
+            width: 150%;
+            position: absolute;
+            left: 45%;
+            transform: translate(-50%, 0);
+            top: 10%;
+        }
+        .mx_HomePage_content .header {
+            width: 100%;
+            height: 50px;
+            background-color: #46309F;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            color: white;
+            position: fixed;
+            top: 0;
+        }
+        .mx_HomePage_content .header div {
+            text-align: center;
+        }
+        .mx_HomePage_content .body {
+            margin-top: -20%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+        .mx_HomePage_content .body img {
+            width: 60%;
+            max-width: 300px;
+        }
+        .mx_HomePage_content .body p {
+            margin-top: 20px;
+            background-color: #46309f73;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            color: white;
+            font-weight: 900;
+        }
+        .mx_HomePage_content .body .form {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .mx_HomePage_content .body .form .input {
+            width: 70%;
+            height: 45px;
+            border-radius: 9999px;
+            position: relative;
+            background: #DADFE5;
+            padding: 2px;
+        }
+        .mx_HomePage_content .body .form .input:focus-within {
+            background: linear-gradient(90deg,#3e45a0,#0068bb,#0086c6,#00a2c6,#00bbc1,#00c4af,#35cb92,#6bcf6e,#93c649,#b6ba28,#d7aa11,#f5961d);
+        }
+        .mx_HomePage_content .body .form .input input {
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            background: white;
+            color: black;
+            padding:  0 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: none;
+            outline: none;
+        }
+        .mx_HomePage_content .body .form button {
+            width: 25%;
+            height: 45px;
+            border-radius: 9999px;
+            background-color: #09d8a2;
+            color: white;
+            border: none;
+        }
+        .mx_HomePage_content .body .form button:hover {
+            background-color: #4630a0;
+        }
+        .mx_HomePage_content .body p span {
+            color: #09d8a2;;
+        }
+        .mx_HomePage_content .footer {
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+        .mx_HomePage_content .footer .content {
+            font-size: 12px;
+            color: white;
+        }
+        .mx_HomePage_content .footer img {
+            width: 15px;
+            height: 15px;
+            margin-left: 10px;
+        }
+    </style>
+
+    <!--
+    <meta name="apple-itunes-app" content="app-id=id1083446067" />
+    -->
+</head>
+
+<body>
+    <div class="mx_HomePage_errorContainer">
+        <!-- populated by JS if needed -->
+    </div>
+
+    <div class="mx_HomePage_content">
+        <!--
+        <img class="fruit-image" src="/welcome/images/flyingfood.svg"/>
+        <div class="header bold">
+            <div>
+                Mobile optimization coming soon. Please use our desktop site!
+            </div>
+        </div>
+        <div class="body">
+            <img src="/welcome/images/auth-logo.svg" width="60%"></img>
+            <p class="bold">
+                Stay tuned for the release of our <span>iOS</span> & <span>Android</span> apps!
+            </p>
+            <div 
+                class="form"
+            >
+                <div class="input">
+                    <input
+                        id="email"
+                        name="EMAIL"
+                        key="email_input"
+                        type="email"
+                        placeholder="Enter your email ..."
+                    />
+                </div>
+                <button
+                    onclick="onOk()"
+                    class="btn_submit"
+                >
+                    Subscribe
+                </button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="content">@2022 Cafeteria.GG Ltd, All right reserved.</div>
+            <img src="/welcome/images/verified.svg"/>
+        </div>
+        -->
+    </div>
+
+    <script>
+        async function onOk() {
+            let email = document.getElementById("email").value;
+            console.log({email})
+            if(email) {
+                const res = await fetch('https://forms.cafeteria.gg/v1/forms/subscriptions', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json, text/plain, */*',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                // Switch messages depending on result
+                switch (res.status) {
+                case 200: // OK
+                    alert('Please click on the verification link in your email inbox to confirm your subscription to our mailing list.');
+                    break;
+                case 201: // DUPLICATE
+                    alert('Please click on the verification link in your email inbox to update your subscription to our mailing list.');
+                    break;
+                case 400: // ERROR
+                    alert('We could not validate your email. Are you sure it is correct?');
+                    break;
+                default:
+                    break;
+                }
+            }
+        }
+        // Skip mobile guide for mobile view release
+        // !TODO !FIXME there should be a better way to disable this mobile_guide page
+        window.location.href = '/#/welcome';
+    </script>
+</body>

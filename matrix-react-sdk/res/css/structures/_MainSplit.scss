@@ -1,0 +1,59 @@
+/*
+Copyright 2019 New Vector Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+.mx_MainSplit {
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    flex: 1;
+    position: relative;
+    // background: url("$(res)/img/backgrounds/pat-1.svg") repeat;
+    background-color: white !important;
+}
+.mx_MainSplit_Lottie_Background_container  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .mx_MainSplit_Lottie_Background {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.mx_MainSplit > .mx_RightPanel_ResizeWrapper {
+    // margin left to not allow the handle to not encroach on the space for the scrollbar
+    margin-left: 8px;
+    height: calc(100vh - 51px); // height of .mx_RoomHeader.light-panel
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    max-width: 250px !important;
+    min-width: 250px !important;
+
+    &:hover .mx_RightPanel_ResizeHandle {
+        // Need to use important to override element style attributes
+        // set by re-resizable
+        top: 50% !important;
+        transform: translate(0, -50%);
+
+        height: 64px !important; // to match width of the ones on roomlist
+        width: 4px !important;
+        border-radius: 4px !important;
+
+        background-color: $primary-fg-color;
+        opacity: 0.8;
+    }
+}

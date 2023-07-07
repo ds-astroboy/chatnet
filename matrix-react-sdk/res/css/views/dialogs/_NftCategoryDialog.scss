@@ -1,0 +1,24 @@
+.mx_NftCategoryDialog {
+    max-width: 450px;
+    width: 80vw;
+    .mx_NftCategoryDialog_body {
+        .mx_NftCategoryDialog_categoryButton {
+            .logo {
+                width: 20px;
+                height: 20px;
+                margin-right: 5px;
+                &.solana {
+                    background-image: url("$(res)/img/currency/solana.png");
+                }
+                &.ethereum {
+                    background-image: url("$(res)/img/currency/ethereum.svg");
+                    background-size: contain;
+                }
+                &.polygon {
+                    background-image: url("$(res)/img/currency/matic.svg");
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}

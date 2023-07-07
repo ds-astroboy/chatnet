@@ -1,0 +1,55 @@
+.mx_AddMemberForm {
+    width: 60%;
+    max-width: 500px;
+    min-width: 450px;
+    &_field {
+        margin: 20px 0;
+    }
+    &_optionButton {
+        display: flex;
+        color: $font-grey-white-color;
+        margin: 20px 0;
+        &_icon {
+            width: 16px;
+            height: 16px;
+        }
+        &_content {
+            font-size: $font-12px;
+            font-family: FontBold;
+        }
+        &:hover {
+            color: $font-purple-color;
+        }
+    }
+    &_buttonGroup {
+        margin: 20px 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &_button {
+        width: 150px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        color: $font-dark-white-color;
+        font-size: $font-14px;
+        font-family: FontBold;
+        transition: all 0.5s;
+        margin-left: 20px;
+        &.add {
+            border-color: $green-color;
+            background-color: $green-color;
+            color: white;
+        }
+        &:hover {
+            transition: all 0.5s;
+            border-color: $font-purple-color;
+            background-color: $font-purple-color;
+            color: white;
+        }
+    }
+}

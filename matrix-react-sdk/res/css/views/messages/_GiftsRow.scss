@@ -1,0 +1,96 @@
+.mx_GiftRow {
+    display: flex;
+    align-items: center;
+    &_Item {
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        &_logo {
+            width: 18px;
+            height: 18px;
+            background-image: url("$(res)/img/cafeteria-point.png");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            &.Solana {
+                width: 16px;
+                height: 16px;
+                background-image: url("$(res)/img/solana.png");
+            }
+            &.Kin {
+                background-image: url("$(res)/img/currency/kin.svg");
+            }
+            &.Matic {
+                background-image: url("$(res)/img/currency/matic.svg");
+            }
+        }
+        &_amount {
+            margin-left: 3px;
+            font-size: $font-12px;
+            color: $font-dark-color;
+            font-family: FontRegular;
+        }
+        &_Tootip {
+            &_sender {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 3px 0;
+                &_info {
+                    display: flex;
+                    align-items: center;
+                }
+                &_time {
+                    margin-right: 3px;
+                    font-size: $font-10px;
+                    font-family: FontRegular;
+                    color: white;
+                }
+                &_name {
+                    margin-left: 3px;
+                    font-size: $font-13px;
+                    color: white;
+                    font-family: FontRegular;
+                }
+                &_gift {
+                    margin-left: 10px;
+                    display: flex;
+                    align-items: center;
+                    &_logo {
+                        width: 15px;
+                        height: 15px;
+                        background-image: url("$(res)/img/cafeteria-point.png");
+                        background-position: center;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        &.Solana {
+                            background-image: url("$(res)/img/solana.png");
+                        }
+                        &.Kin {
+                            background-image: url("$(res)/img/currency/kin.svg");
+                        }
+                        &.Matic {
+                            background-image: url("$(res)/img/currency/matic.svg");
+                        }
+                    }
+                    &_amount {
+                        margin-left: 3px;
+                        font-size: $font-11px;
+                        color: white;
+                        font-family: FontRegular;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mx_EventTile_My_Event:not(.mx_PriceBot) {
+    .mx_GiftRow {
+        &_Item {
+            &_amount {
+                color: white !important;
+            }
+        }
+    }
+}

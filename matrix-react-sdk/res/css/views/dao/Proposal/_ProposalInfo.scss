@@ -1,0 +1,40 @@
+.mx_ProposalInfo {
+    width: 100%;
+    text-align: left;
+    &_title {
+        font-size: $font-18px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+    }
+    &_description {
+        width: 70%;
+        margin-top: 10px;
+        font-size: $font-14px;
+        font-family: FontRegular;
+        color: $font-grey-white-color;
+        min-height: 50px;
+    }
+    &_subinfo {
+        &_content {
+            margin-top: 30px;
+            font-size: $font-13px;
+            font-family: FontRegular;
+            color: $font-dark-white-color;
+        }
+        &_content.bold {
+            font-family: FontBold;                                
+        }
+        &_image {                            
+            margin-top: 30px;
+            img {
+                width: 100%;
+            }
+        }
+        &_note {
+            margin-top: 5px;
+            font-size: $font-12px;
+            text-align: center;
+            color: $font-grey-white-color;
+        }        
+    }
+}   

@@ -1,0 +1,43 @@
+.mx_VoteCommentModal {
+    max-width: 450px;
+    min-width: 400px;
+    width: 50%;
+    &_description {
+        font-size: $font-14px;
+        color: $font-dark-white-color;
+        font-family: FontRegular;
+    }
+    &_commentField {
+
+    }
+    &_buttonGroup {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    &_button {
+        height: 45px;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $font-14px;
+        font-family: FontBold;
+        color: $font-dark-white-color;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        transition: all 0.5s;
+        &.vote {
+            border-color: $green-color;
+            background-color: $green-color;
+            color: white;
+        }
+        &:hover {
+            transition: all 0.5s;
+            border-color: $font-purple-color;
+            background-color: $font-purple-color;
+            color: white;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.mx_DaoMembersContainer {
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &_members {
+            display: flex;
+            align-items: center;
+            &_icon {
+                width: 30px;
+                height: 30px;
+            }
+            &_number {
+                margin-left: 10px;
+                font-size: $font-14px;
+                font-family: FontBold;
+                color: $font-grey-white-color;
+            }
+        }
+    }
+    &_title {
+        display: flex;
+        align-items: center;
+        &_logo {
+            width: 25px;
+            height: 25px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        &_content {
+            margin-left: 10px;
+            font-size: $font-16px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+    }
+    &_body {
+        margin-top: 30px;
+        display: flex;
+        box-sizing: border-box !important;
+    }   
+    &_search {
+
+    }
+    &_membersSection {
+        box-sizing: border-box !important;
+        width: 30%;
+        padding-right: 20px;
+        &_header {
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
+        &_number {
+            font-size: $font-12px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_addButton {
+            display: flex;
+            align-items: center;
+            &_icon {
+                width: 20px;
+                height: 20px;
+            }
+            &_content {
+                margin-left: 5px;
+                font-size: $font-12px;
+                color: $font-grey-white-color;
+                font-family: FontBold;
+            }
+        }
+        &_tab {
+            margin-top: 20px;
+        }
+    }
+    &_memberOverView {
+        width: 70%;
+    }
+}

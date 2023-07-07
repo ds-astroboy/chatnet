@@ -1,0 +1,36 @@
+.mx_NewTreasuryAccountFrom {
+    margin-top: 50px;
+    &_tokenInfo {
+        &_logo {
+
+        }
+        &_name {
+
+        }
+        &_symbol {
+
+        }
+    }
+    &_buttonGroup {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    &_button {
+        width: 150px;
+        height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $green-color;
+        border-radius: 9999px;
+        color: white;
+        font-size: $font-14px;
+        font-family: FontBold;
+        background-color: $green-color;
+        &:hover {
+            border-color: $font-purple-color;
+            background-color: $font-purple-color;
+        }
+    }
+}

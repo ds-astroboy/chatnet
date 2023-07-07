@@ -1,0 +1,38 @@
+.mx_TeamWalletField {
+    margin-top: 20px;
+    &_header {
+        font-size: $font-14px;
+        color: $font-dark-white-color;
+        font-family: FontRegular;
+        margin-bottom: 20px;
+    }
+    &_member {
+        &_number {
+            margin: 5px;
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontRegular;
+        }
+        &_detail {
+            display: flex;
+            align-items: center;
+        }
+        &_address {
+            box-sizing: border-box !important;
+            padding: 8px;
+            background-color: #051634;
+            border-radius: 5px;
+        }
+        &_icon {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            display: flex;
+        }
+    }
+    &_addButton {
+        width: 40px;
+        height: 40px;
+        margin: 10px 3px;
+    }
+}

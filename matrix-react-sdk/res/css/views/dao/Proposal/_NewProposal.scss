@@ -1,0 +1,111 @@
+.mx_NewProposal {
+    &_header {
+        &_title {
+            font-family: FontBold;
+            font-size: $font-18px;
+            color: $font-dark-white-color;
+            margin: 20px 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+    &_backButton {
+        display: flex;
+        align-items: center;
+        &_icon {
+            width: 15px;
+            height: 15px;
+        }
+        &_content {
+            margin-left: 10px;
+            font-size: $font-14px;
+            font-family: FontRegular;
+            color: $font-grey-white-color;
+        }
+    }
+    &_instructions {
+        box-sizing: border-box!important;
+        margin-top: 10px;
+        &_title {
+            margin-left: 10px;
+            font-size: $font-14px;
+            font-family: FontBold;
+            color: $font-dark-white-color;
+        }
+    }
+    &_instruction {
+        margin: 10px 0;
+        border: 1px solid $border-grey-color;
+        border-radius: 10px;
+        padding: 10px;
+        &_title {
+            font-size: $font-13px;
+            font-family: FontRegular;
+            color: $font-dark-white-color;
+            margin-bottom: 10px;
+        }
+        &_button {
+            display: flex;
+            align-items: center;
+            &_icon {
+                width: 20px;
+                height: 20px;
+            }
+            &_content {
+                font-size: $font-13px;
+                color: $font-dark-white-color;
+                font-family: FontBold;
+            }
+        }
+    }
+
+    &_addInstruction {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        &_icon {
+            width: 20px;
+            height: 20px;
+        }
+        &_content {
+            margin-left: 5px;
+            font-size: $font-13px;
+            color: $font-dark-white-color;
+            font-family: FontBold;
+        }
+    }
+    &_footer {
+        margin-top: 50px;
+    }
+    &_buttonGroup {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &_button {
+        height: 45px;
+        padding: 0px 30px;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: FontBold;
+        font-size: $font-14px;
+        color: $font-dark-white-color;
+        transition: all 0.5s;
+        &.add {
+            background-color: $green-color;
+            border-color: $green-color;
+            color: white;
+        }
+        &:hover {
+            transition: all 0.5s;
+            background-color: $font-purple-color;
+            border-color: $font-purple-color;
+            color: white;
+        }
+    }
+}

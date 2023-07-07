@@ -1,0 +1,160 @@
+.mx_MemberOverview {
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &_address {
+            font-size: $font-20px;
+            color: $font-dark-white-color;
+            font-family: FontBold;
+        }
+        &_link {
+            display: flex;
+            align-items: center;
+            &_content {
+                font-size: $font-13px;
+                color: $font-grey-white-color;
+                font-family: FontBold;
+            }
+            &_icon {   
+                margin-left: 10px;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &_subHeader {
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    &_voteTokenInfo {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: $border-grey-color;
+        &_name {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_amount {
+            font-size: $font-20px;
+            color: $font-dark-white-color;
+            font-family: FontBold;
+        }
+        &_rank {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+    }
+    &_otherVoteTokenInfo {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: $border-grey-color;
+        &_name {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_amount {
+            font-size: $font-20px;
+            color: $font-dark-white-color;
+            font-family: FontBold;
+        }
+    }
+    &_voteInfo {
+        padding: 20px;
+        border-radius: 5px;
+        background-color: $border-grey-color;
+        &_title {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_count {
+            font-size: $font-20px;
+            color: $font-dark-white-color;
+            font-family: FontBold;
+        }
+        &_result {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+    }
+    &_body {
+        margin-top: 20px;
+    }
+    &_totlaVotes {
+        font-size: $font-16px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+        margin-bottom: 20px;
+    }
+    &_proposals {
+        margin: 10px 0;
+    }
+    &_proposal {
+        box-sizing: border-box !important;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 10px;
+        border: 3px solid $border-grey-color;
+        display: flex;
+        flex-direction: column;
+        &_info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &_name {
+            font-size: $font-14px;
+            color: $font-grey-white-color;
+            font-family: FontBold;
+        }
+        &_result {
+            display: flex;
+            align-items: center;
+            padding: 3px 5px;
+            border-radius: 9999px;
+            background-color: $border-grey-color;
+            &_icon {
+                &.yes {
+                    color: $green-color;
+                }
+                width: 20px;
+                height: 20px;
+            }
+            &_content {
+                &.no {
+                    color: $warning-color;
+                }
+                margin-left: 5px;
+                font-size: $font-12px;
+                color: $font-grey-white-color;
+                font-family: FontBold;
+            }
+        }
+        &_message {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box !important;
+            padding: 10px;
+            background-color: $border-grey-color;
+            color: $font-grey-white-color;
+            margin-top: 10px;
+            border-radius: 10px;
+            &_icon {
+                width: 20px;
+                height: 20px;
+            }
+            &_content {
+                font-size: $font-12px;
+                font-family: FontRegular;
+                margin-left: 5px;
+            }
+        }
+    }
+}

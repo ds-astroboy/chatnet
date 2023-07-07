@@ -1,0 +1,44 @@
+.mx_DepositNFT {
+    &_header {
+        display: flex;
+        align-items: center;
+        font-size: $font-18px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+    }
+    &_prevButton {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+    }
+    &_linkIcon {
+        width: 20px;
+        height: 20px;
+        margin-left: 20px;
+    }
+    &_buttonGroup {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &_button {
+        height: 45px;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+        font-size: $font-16px;
+        border: 1px solid $font-purple-color;
+        border-radius: 9999px;
+        transition: all 0.5s;
+        &:hover {
+            background-color: $font-purple-color;
+            color: white;
+            transition: all 0.5s;
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.mx_Terms {
+    overflow-y: auto;
+    overflow-y: overlay;    // where supported
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    .mx_Terms_container {
+        background-color: white;
+        padding-top: 50px;
+    }
+    .mx_Terms_header {
+        font-size: $font-25px;
+        color: $font-dark-white-color;
+        font-family: FontBold;
+        padding: 0 50px;
+        text-align: center;
+    }
+    .mx_Terms_body {
+        padding: 50px;
+        line-height: 2;
+        font-size: $font-16px;
+        color: $font-dark-white-color;
+        .mx_Terms_title, .mx_Terms_subTitle, .mx_Terms_subTitle2 {
+            font-family: FontBold;
+        }
+        .mx_Terms_content {
+            font-family: FontRegular;
+            margin-bottom: 20px;
+            .mx_Terms_list {
+                margin-left: 30px;
+            }
+        }
+        .mx_Terms_title {
+            .mx_Terms_subTitle {
+                margin-left: 20px;
+                .mx_Terms_subTitle2 {
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}
